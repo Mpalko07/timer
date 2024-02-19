@@ -4,15 +4,15 @@ const beep = () => {
   process.stdout.write('\x07');
 };
 
-const setTimer = (time) => {
-  if (time > 0 && !isNaN(time)) {
+const systemSound = (second) => {
+  if (second > 0 && !isNaN(second)) {
     setTimeout(() => {
       beep();
-    }, time * 1000);
+    }, second * 1000);
   }
 };
 
 for (const arg of args) {
-  const time = Number(arg);
-  setTimer(time);
+  const second = Number(arg);
+  systemSound(second);
 }
